@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Cadastro Beats</title>
+</head>
+
+<body>
+    <h1 class="title">Cadastro de Clientes Beats</h1>
+
+    <center>
+        <div class="container">
+            <form method="post" action="/" th:object="${salvar}">
+                <div class="col-md-5">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" maxlength="80"
+                        oninput="this.value = this.value.toUpperCase()" th:field="*{name}" required>
+                </div>
+                <br>
+                <div class="col-md-3">
+                    <label class="form-label">Data de nascimento</label>
+                    <input type="date" class="form-control" id="data" name="data" onblur="verificarIdade()" th:field="*{data_nasc}" required>
+                </div>
+                <br>
+                <div class="col-md-2">
+                    <label class="form-label">RG</label>
+                    <input type="text" class="form-control" id="rg" name="rg" maxlength="14" th:field="*{rg}" required>
+                </div>
+                <br>
+                <div class="col-md-2">
+                    <label class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" maxlength="14" th:field="*{cpf}" required>
+                </div>
+                <br>
+                <div class="col-md-2">
+                    <label class="form-label">Celular</label>
+                    <input type="text" class="form-control" id="celular" name="celular" maxlength="14" th:field="*{celular}" required>
+                </div>
+                <br>
+                <div class="col-md-5">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" maxlength="60" th:field="*{email}">
+                </div>
+                <br>
+                <div class="col-md-5">
+                    <label class="form-label">Nome Mãe</label>
+                    <input type="text" class="form-control" id="nome_mae" name="nome_mae" maxlength="80"
+                        oninput="this.value = this.value.toUpperCase()" th:field="*{nome_mae}" required>
+                </div>
+                <br>
+                <div class="col-md-5">
+                    <label class="form-label">Nome Pai</label>
+                    <input type="text" class="form-control" id="nome_pai" name="nome_pai" maxlength="80"
+                        oninput="this.value = this.value.toUpperCase()" th:field="*{nome_pai}" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+            </form>
+        </div>
+    </center>
+    <br>
+</body>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>
